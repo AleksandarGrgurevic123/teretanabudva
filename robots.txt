@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://kovacgym.me/sitemap.xml
