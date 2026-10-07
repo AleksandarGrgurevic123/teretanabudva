@@ -329,6 +329,11 @@
     .price-card.featured .price-head { display: block; }
     .price-card.featured .badge { position: absolute; top: 0; left: 50%; transform: translate(-50%, -50%); white-space: nowrap; padding: 6px 14px; font-size: 12px; line-height: 1.2; }
     #cijene .grid-3, #prices .grid-3 { padding-top: 14px; }
+    /* Mobilni: centrirani naslovi */
+    @media (max-width: 768px) {
+      h1, h2, .eyebrow { text-align: center; }
+      .section-head { align-items: stretch; }
+    }
   </style>
 </head>
 <body>
