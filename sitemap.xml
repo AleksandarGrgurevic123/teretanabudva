@@ -3,11 +3,11 @@
   <url>
     <loc>https://kovacgym.me/</loc>
     <xhtml:link rel="alternate" hreflang="sr" href="https://kovacgym.me/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kovacgym.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kovacgym.me/en.html"/>
   </url>
   <url>
-    <loc>https://kovacgym.me/en/</loc>
+    <loc>https://kovacgym.me/en.html</loc>
     <xhtml:link rel="alternate" hreflang="sr" href="https://kovacgym.me/"/>
-    <xhtml:link rel="alternate" hreflang="en" href="https://kovacgym.me/en/"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://kovacgym.me/en.html"/>
   </url>
 </urlset>
