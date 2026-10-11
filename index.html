@@ -473,6 +473,28 @@
     .mobile-nav a.link.active { color: var(--accent); }
     .mobile-nav { max-height: calc(100vh - 72px); overflow-y: auto; }
     @media (max-width: 1099px) { section[id] { scroll-margin-top: 72px; } }
+    /* Mobilni meni: centrirane stavke, bez obojenih dugmadi na dodir */
+    a, button { -webkit-tap-highlight-color: transparent; }
+    .mobile-nav a.link { text-align: center; position: relative; }
+    .mobile-nav a.link.active { color: var(--text); font-weight: 700; }
+    .mobile-nav a.link.active::after { content: ""; display: block; width: 24px; height: 2px; margin: 6px auto 0; background: var(--accent); border-radius: 2px; }
+    .mobile-nav a.link:focus:not(:focus-visible), .icon-btn:focus:not(:focus-visible), .lang:focus:not(:focus-visible) { outline: none; }
+    /* Mobilni meni se lagano spusta i pojavljuje */
+    .mobile-nav { display: block; max-height: 0; opacity: 0; visibility: hidden; overflow: hidden; border-bottom-color: transparent; border-bottom-width: 0;
+      transition: max-height .4s cubic-bezier(.2,.7,.2,1), opacity .3s ease, visibility 0s linear .4s, border-color .3s ease; }
+    .mobile-nav.open { max-height: min(calc(100vh - 72px), 420px); opacity: 1; visibility: visible; overflow-y: auto; border-bottom-color: var(--line); border-bottom-width: 1px;
+      transition: max-height .45s cubic-bezier(.2,.7,.2,1), opacity .35s ease, visibility 0s, border-color .3s ease; }
+    .mobile-nav .container > * { opacity: 0; transform: translateY(-10px); transition: opacity .3s ease, transform .3s ease; }
+    .mobile-nav.open .container > * { opacity: 1; transform: none; }
+    .mobile-nav.open .container > :nth-child(1) { transition-delay: .06s; }
+    .mobile-nav.open .container > :nth-child(2) { transition-delay: .11s; }
+    .mobile-nav.open .container > :nth-child(3) { transition-delay: .16s; }
+    .mobile-nav.open .container > :nth-child(4) { transition-delay: .21s; }
+    .mobile-nav.open .container > :nth-child(5) { transition-delay: .26s; }
+    @media (min-width: 1100px) { .mobile-nav { display: none; } }
+    @media (prefers-reduced-motion: reduce) {
+      .mobile-nav, .mobile-nav.open, .mobile-nav .container > * { transition: none; }
+    }
   </style>
 </head>
 <body>
