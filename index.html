@@ -495,6 +495,97 @@
     @media (prefers-reduced-motion: reduce) {
       .mobile-nav, .mobile-nav.open, .mobile-nav .container > * { transition: none; }
     }
+    /* Dokazi: prica clana, treneri sa biografijom, galerija */
+    .case-card { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 0; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; background: var(--bg-alt); }
+    .case-photos { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); }
+    .case-photos figure { margin: 0; position: relative; }
+    .case-photos .ph { border: 0; border-radius: 0; height: 100%; min-height: 420px; }
+    .case-photos figcaption { position: absolute; left: 12px; top: 12px; z-index: 2; background: var(--bg); color: var(--text); font-size: 12px; font-weight: 700; letter-spacing: 1.5px; padding: 6px 10px; border-radius: 8px; }
+    .case-body { padding: 40px; display: flex; flex-direction: column; gap: 22px; }
+    .case-who { font-size: 14px; font-weight: 700; letter-spacing: 1px; color: var(--accent); }
+    .case-step h3 { font-size: 15px; letter-spacing: 1px; text-transform: uppercase; color: var(--muted); margin-bottom: 6px; }
+    .case-step p { font-size: 16px; }
+    .case-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; padding-top: 22px; border-top: 1px solid var(--line); }
+    .case-stat strong { display: block; font-family: var(--display); font-weight: 400; font-size: 40px; line-height: 1.1; color: var(--accent); }
+    .case-stat span { font-size: 14px; color: var(--muted); line-height: 1.4; display: block; }
+    .case-foot { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .case-note { font-size: 13px; color: var(--muted); }
+    .coach-meta { display: flex; flex-wrap: wrap; gap: 6px 14px; font-size: 14px; color: var(--muted); }
+    .coach-meta span + span::before { content: "·"; margin-right: 14px; color: var(--line-strong); }
+    .coach-more { align-self: flex-start; display: inline-flex; align-items: center; gap: 8px; margin-top: 4px; background: none; border: 0; padding: 6px 0; color: var(--text); font: inherit; font-size: 16px; font-weight: 700; cursor: pointer; text-decoration: underline; text-underline-offset: 5px; text-decoration-color: var(--line-strong); }
+    .coach-more:hover { color: var(--accent); text-decoration-color: var(--accent); }
+    .coach-photo-btn { display: block; width: 100%; padding: 0; border: 0; background: none; cursor: pointer; border-radius: 8px; }
+    .gallery { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); grid-auto-rows: 220px; gap: 16px; }
+    .gallery-item { position: relative; padding: 0; border: 0; background: none; cursor: zoom-in; border-radius: 8px; overflow: hidden; text-align: left; color: inherit; font: inherit; }
+    .gallery-item:first-child { grid-column: span 2; grid-row: span 2; }
+    .gallery-item .ph { position: absolute; inset: 0; }
+    .gallery-item .ph img { transition: transform .5s ease; }
+    .gallery-item:hover .ph img { transform: scale(1.04); }
+    .gallery-cap { position: absolute; left: 12px; bottom: 12px; z-index: 2; display: inline-flex; align-items: center; gap: 8px; background: var(--bg); color: var(--text); font-size: 14px; font-weight: 700; padding: 8px 12px; border-radius: 8px; }
+    .gallery-cap svg { color: var(--accent); }
+    .modal { padding: 0; border: 1px solid var(--line-strong); border-radius: 8px; background: var(--bg-alt); color: var(--text); max-width: 900px; width: calc(100% - 48px); max-height: calc(100vh - 48px); overflow: hidden; }
+    .modal::backdrop { background: rgba(10, 9, 7, .78); }
+    .modal-close { position: absolute; top: 12px; right: 12px; z-index: 3; width: 44px; height: 44px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--text); cursor: pointer; }
+    .modal-close:hover { color: var(--accent); border-color: var(--accent); }
+    .coach-dialog-inner { display: grid; grid-template-columns: minmax(0, 2fr) minmax(0, 3fr); max-height: calc(100vh - 48px); }
+    .coach-dialog-inner .ph { border: 0; border-radius: 0; min-height: 100%; }
+    .coach-dialog-body { padding: 40px 40px 32px; overflow-y: auto; display: flex; flex-direction: column; gap: 18px; }
+    .coach-dialog-body h2 { font-size: 40px; text-align: left; }
+    .chips { display: flex; flex-wrap: wrap; gap: 8px; }
+    .chip { font-size: 13px; font-weight: 700; padding: 6px 12px; border: 1px solid var(--line-strong); border-radius: 8px; color: var(--text); }
+    .coach-dialog-body p { font-size: 16px; color: var(--muted); }
+    .coach-dialog-body dl { margin: 0; display: grid; gap: 12px; padding-top: 16px; border-top: 1px solid var(--line); }
+    .coach-dialog-body dt { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+    .coach-dialog-body dd { margin: 2px 0 0; font-size: 16px; }
+    .coach-dialog-body .btn { align-self: flex-start; margin-top: 6px; }
+    .lightbox { max-width: 1100px; background: var(--bg); }
+    .lightbox figure { margin: 0; position: relative; }
+    .lightbox .ph { border: 0; border-radius: 0; height: min(70vh, 620px); }
+    .lightbox .ph img { object-fit: contain; background: #0E0D0A; }
+    .lightbox figcaption { display: flex; justify-content: space-between; align-items: center; gap: 16px; padding: 16px 20px; font-weight: 700; }
+    .lightbox .lb-count { color: var(--muted); font-weight: 500; font-variant-numeric: tabular-nums; }
+    .lb-nav { position: absolute; top: 50%; transform: translateY(-50%); z-index: 3; width: 48px; height: 48px; display: inline-flex; align-items: center; justify-content: center; border-radius: 8px; border: 1px solid var(--line-strong); background: var(--bg); color: var(--text); cursor: pointer; }
+    .lb-nav:hover { color: var(--accent); border-color: var(--accent); }
+    .lb-prev { left: 12px; } .lb-next { right: 12px; }
+    body.modal-open { overflow: hidden; }
+    @media (prefers-reduced-motion: no-preference) {
+      .modal[open] { animation: modalIn .3s cubic-bezier(.2,.7,.2,1); }
+      .modal[open]::backdrop { animation: fadeIn .3s ease; }
+      @keyframes modalIn { from { opacity: 0; transform: translateY(16px) scale(.98); } to { opacity: 1; transform: none; } }
+      .lightbox .ph img.swap { animation: fadeIn .25s ease; }
+    }
+    @media (min-width: 769px) and (max-width: 1099px) {
+      .case-card { grid-template-columns: 1fr; }
+      .case-photos .ph { min-height: 320px; }
+    }
+    @media (max-width: 768px) {
+      .case-card { grid-template-columns: 1fr; }
+      .case-photos .ph { min-height: 240px; }
+      .case-body { padding: 24px; }
+      .case-stat strong { font-size: 30px; }
+      .case-stats { gap: 10px; }
+      .case-foot .btn { width: 100%; }
+      .gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 150px; gap: 10px; }
+      .gallery-cap { font-size: 12px; padding: 6px 8px; left: 8px; bottom: 8px; }
+      .gallery-cap svg { display: none; }
+      .modal { width: 100%; max-width: 100%; max-height: 92vh; margin: auto 0 0; border-radius: 12px 12px 0 0; border-bottom: 0; }
+      .coach-dialog-inner { grid-template-columns: 1fr; max-height: 92vh; overflow-y: auto; }
+      .coach-dialog-inner .ph { height: 260px; min-height: 0; }
+      .coach-dialog-body { padding: 24px 20px 28px; overflow: visible; }
+      .coach-dialog-body h2 { font-size: 34px; }
+      .coach-dialog-body .btn { width: 100%; }
+      .lightbox { margin: auto 0; border-radius: 0; border: 0; max-height: 100vh; }
+      .lightbox .ph { height: 60vh; }
+      .lb-nav { width: 44px; height: 44px; }
+      @media (prefers-reduced-motion: no-preference) {
+        .modal.coach-dialog[open] { animation: sheetUp .35s cubic-bezier(.2,.7,.2,1); }
+        @keyframes sheetUp { from { transform: translateY(40px); opacity: 0; } to { transform: none; opacity: 1; } }
+      }
+    }
+    .case-stat span { min-height: calc(2 * 1.4em); }
+    @media (max-width: 768px) { .case-stat span { min-height: calc(3 * 1.4em); } }
+    @media (max-width: 768px) { .case-note { min-height: calc(2 * 1.6em); width: 100%; text-align: center; } }
+    @media (max-width: 768px) { .gallery-item:last-child { grid-column: span 2; } .gallery-item .ph { font-size: 12px; padding: 12px 12px 40px; } }
   </style>
 </head>
 <body>
@@ -663,25 +754,69 @@
     </div>
   </section>
 
-  <section id="treneri">
+  <section id="prica">
+    <div class="container">
+      <div class="kicker">PRIČA ČLANA</div>
+      <div class="section-head stack">
+        <h2>DRAGAN JE DOŠAO SA BOLOM U LEĐIMA</h2>
+        <p>Nije sportista i nije imao vremena. Ovako je izgledalo njegovih prvih šest mjeseci.</p>
+      </div>
+      <article class="case-card">
+        <div class="case-photos"><figure><figcaption>PRIJE</figcaption><div class="ph">FOTOGRAFIJA PRIJE<img src="prije.jpg" style="object-position: center 30%" alt="Dragan prije početka treninga" loading="lazy" onerror="this.remove()"></div></figure><figure><figcaption>POSLIJE</figcaption><div class="ph">FOTOGRAFIJA POSLIJE<img src="poslije.jpg" style="object-position: center 30%" alt="Dragan poslije šest mjeseci treninga" loading="lazy" onerror="this.remove()"></div></figure></div>
+        <div class="case-body">
+          <div class="case-who">Dragan M., 41 · personalni trening sa Markom</div>
+            <div class="case-step"><h3>Sa čim je došao</h3><p>Deset sati dnevno sjedi za računarom. Leđa su ga boljela svako jutro, a dvije članarine je ranije prekinuo poslije mjesec dana.</p></div>
+            <div class="case-step"><h3>Šta je radio</h3><p>Tri treninga sedmično sa Markom. Prvo je ispravio čučanj i mrtvo dizanje, a kilažu je dodavao tek kad je tehnika bila čista. Uz to plan ishrane bez gladovanja.</p></div>
+            <div class="case-step"><h3>Šta se promijenilo</h3><p>Ujutru ustaje bez bola, nosi dijete na ramenima i prvi put je izdržao duže od dva mjeseca.</p></div>
+          <div class="case-stats"><div class="case-stat"><strong>−11 kg</strong><span>za šest mjeseci</span></div><div class="case-stat"><strong>3×</strong><span>treninga sedmično</span></div><div class="case-stat"><strong>0</strong><span>jutara sa bolom u leđima</span></div></div>
+          <div class="case-foot"><a class="btn btn-primary" href="#kontakt" data-select="Personalni paket">Hoću personalni plan</a><span class="case-note">Rezultati zavise od osobe, redovnosti i ishrane.</span></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="treneri" class="alt">
     <div class="container">
       <h2 class="section-title">KO TE VODI OD PRVOG DANA</h2>
       <div class="grid-3">
         <div class="coach">
-          <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-1.jpg" alt="Marko Kovač, kondicioni i personalni trener" style="object-position: center 18%" loading="lazy" onerror="this.remove()"></div>
+          <button class="coach-photo-btn" type="button" data-coach="coach-1" aria-label="Više o Marku"><div class="ph">FOTOGRAFIJA TRENERA<img src="trener-1.jpg" alt="Marko Kovač, kondicioni i personalni trener" style="object-position: center 18%" loading="lazy" onerror="this.remove()"></div></button>
           <h3>Marko Kovač</h3>
           <div class="coach-role">Kondicioni i personalni trener</div>
+          <div class="coach-meta"><span>12 godina iskustva</span><span>300+ klijenata</span></div>
+          <button class="coach-more" type="button" data-coach="coach-1">Više o Marku</button>
         </div>
         <div class="coach">
-          <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-2.jpg" alt="Stefan Radović, trener kikboksa" style="object-position: center 22%" loading="lazy" onerror="this.remove()"></div>
+          <button class="coach-photo-btn" type="button" data-coach="coach-2" aria-label="Više o Stefanu"><div class="ph">FOTOGRAFIJA TRENERA<img src="trener-2.jpg" alt="Stefan Radović, trener kikboksa" style="object-position: center 22%" loading="lazy" onerror="this.remove()"></div></button>
           <h3>Stefan Radović</h3>
           <div class="coach-role">Trener kikboksa</div>
+          <div class="coach-meta"><span>9 godina u ringu</span><span>bivši takmičar</span></div>
+          <button class="coach-more" type="button" data-coach="coach-2">Više o Stefanu</button>
         </div>
         <div class="coach">
-          <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-3.jpg" alt="Jelena Vuković, trenerica grupnih treninga" style="object-position: center 25%" loading="lazy" onerror="this.remove()"></div>
+          <button class="coach-photo-btn" type="button" data-coach="coach-3" aria-label="Više o Jeleni"><div class="ph">FOTOGRAFIJA TRENERA<img src="trener-3.jpg" alt="Jelena Vuković, trenerica grupnih treninga" style="object-position: center 25%" loading="lazy" onerror="this.remove()"></div></button>
           <h3>Jelena Vuković</h3>
           <div class="coach-role">Grupni treninzi</div>
+          <div class="coach-meta"><span>7 godina iskustva</span><span>grupe do 12 ljudi</span></div>
+          <button class="coach-more" type="button" data-coach="coach-3">Više o Jeleni</button>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="galerija">
+    <div class="container">
+      <div class="section-head stack">
+        <h2>POGLEDAJ SALU PRIJE NEGO ŠTO DOĐEŠ</h2>
+        <p>Ovako izgleda prostor u kom ćeš trenirati. Klikni na sliku da je otvoriš.</p>
+      </div>
+      <div class="gallery" role="list" aria-label="Galerija sale">
+        <button class="gallery-item" type="button" data-src="galerija-1.jpg" data-label="Glavni prostor" data-alt="Glavni prostor" data-ph="FOTOGRAFIJA: GLAVNI PROSTOR" aria-label="Otvori sliku: Glavni prostor"><div class="ph">FOTOGRAFIJA: GLAVNI PROSTOR<img src="galerija-1.jpg" alt="Glavni prostor" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Glavni prostor</span></button>
+        <button class="gallery-item" type="button" data-src="galerija-2.jpg" data-label="Tegovi" data-alt="Tegovi" data-ph="FOTOGRAFIJA: TEGOVI" aria-label="Otvori sliku: Tegovi"><div class="ph">FOTOGRAFIJA: TEGOVI<img src="galerija-2.jpg" alt="Tegovi" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Tegovi</span></button>
+        <button class="gallery-item" type="button" data-src="galerija-3.jpg" data-label="Kikboks zona" data-alt="Kikboks zona" data-ph="FOTOGRAFIJA: KIKBOKS ZONA" aria-label="Otvori sliku: Kikboks zona"><div class="ph">FOTOGRAFIJA: KIKBOKS ZONA<img src="galerija-3.jpg" alt="Kikboks zona" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Kikboks zona</span></button>
+        <button class="gallery-item" type="button" data-src="galerija-4.jpg" data-label="Grupni treninzi" data-alt="Grupni treninzi" data-ph="FOTOGRAFIJA: GRUPNI TRENINZI" aria-label="Otvori sliku: Grupni treninzi"><div class="ph">FOTOGRAFIJA: GRUPNI TRENINZI<img src="galerija-4.jpg" alt="Grupni treninzi" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Grupni treninzi</span></button>
+        <button class="gallery-item" type="button" data-src="galerija-5.jpg" data-label="Svlačionica" data-alt="Svlačionica" data-ph="FOTOGRAFIJA: SVLAČIONICA" aria-label="Otvori sliku: Svlačionica"><div class="ph">FOTOGRAFIJA: SVLAČIONICA<img src="galerija-5.jpg" alt="Svlačionica" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Svlačionica</span></button>
+        <button class="gallery-item" type="button" data-src="galerija-6.jpg" data-label="Recepcija" data-alt="Recepcija" data-ph="FOTOGRAFIJA: RECEPCIJA" aria-label="Otvori sliku: Recepcija"><div class="ph">FOTOGRAFIJA: RECEPCIJA<img src="galerija-6.jpg" alt="Recepcija" loading="lazy" onerror="this.remove()"></div><span class="gallery-cap"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>Recepcija</span></button>
       </div>
     </div>
   </section>
@@ -789,6 +924,11 @@
                 <option>Tromjesečna članarina</option>
                 <option>Personalni paket</option>
               </optgroup>
+              <optgroup label="Trener">
+                <option>Probni trening sa Markom</option>
+                <option>Probni trening sa Stefanom</option>
+                <option>Probni trening sa Jelenom</option>
+              </optgroup>
             </select>
           </div>
           <button class="btn btn-primary" type="submit">Želim besplatan probni trening</button>
@@ -812,6 +952,62 @@
   </section>
 
 </main>
+
+<dialog class="modal coach-dialog" id="coach-1" aria-labelledby="coach-1-name">
+  <button class="modal-close" type="button" data-close aria-label="Zatvori"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="coach-dialog-inner">
+    <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-1.jpg" alt="Marko Kovač, kondicioni i personalni trener" style="object-position: center 18%" loading="lazy" onerror="this.remove()"></div>
+    <div class="coach-dialog-body">
+      <div class="coach-role">Kondicioni i personalni trener</div>
+      <h2 id="coach-1-name">MARKO KOVAČ</h2>
+      <div class="coach-meta"><span>12 godina iskustva</span><span>300+ klijenata</span></div>
+      <div class="chips"><span class="chip">Snaga</span><span class="chip">Mršavljenje</span><span class="chip">Bol u leđima</span></div>
+      <p>Treniram ljude 12 godina, a najviše volim početnike. Kod njih se napredak vidi najbrže, ako se od prvog dana radi pravilno.</p><p>Prije nego što dodam kilažu, gledam kako se krećeš. Većina bolova u leđima dolazi od loše tehnike, a ne od tegova.</p>
+      <dl><div><dt>Za koga je</dt><dd>Ako počinješ od nule, vraćaš se poslije pauze ili te nešto boli.</dd></div><div><dt>Van sale</dt><dd>Planinarenje po Lovćenu i kuvanje za porodicu.</dd></div></dl>
+      <a class="btn btn-primary" href="#kontakt" data-select="Probni trening sa Markom">Zakaži probni trening sa Markom</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal coach-dialog" id="coach-2" aria-labelledby="coach-2-name">
+  <button class="modal-close" type="button" data-close aria-label="Zatvori"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="coach-dialog-inner">
+    <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-2.jpg" alt="Stefan Radović, trener kikboksa" style="object-position: center 22%" loading="lazy" onerror="this.remove()"></div>
+    <div class="coach-dialog-body">
+      <div class="coach-role">Trener kikboksa</div>
+      <h2 id="coach-2-name">STEFAN RADOVIĆ</h2>
+      <div class="coach-meta"><span>9 godina u ringu</span><span>bivši takmičar</span></div>
+      <div class="chips"><span class="chip">Kikboks</span><span class="chip">Tehnika</span><span class="chip">Kondicija</span></div>
+      <p>Takmičio sam se devet godina, a sad vodim grupe za početnike i napredne.</p><p>Niko kod mene ne ulazi u sparing prvog dana. Prvo učiš stav, gard i udarce na vreći, a sparing dolazi kad si spreman i kad ti to hoćeš.</p>
+      <dl><div><dt>Za koga je</dt><dd>Ako hoćeš kondiciju, samopouzdanje ili da probaš borilački sport bez straha.</dd></div><div><dt>Van sale</dt><dd>Jutarnje trčanje uz more i pecanje.</dd></div></dl>
+      <a class="btn btn-primary" href="#kontakt" data-select="Probni trening sa Stefanom">Zakaži probni trening sa Stefanom</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal coach-dialog" id="coach-3" aria-labelledby="coach-3-name">
+  <button class="modal-close" type="button" data-close aria-label="Zatvori"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <div class="coach-dialog-inner">
+    <div class="ph">FOTOGRAFIJA TRENERA<img src="trener-3.jpg" alt="Jelena Vuković, trenerica grupnih treninga" style="object-position: center 25%" loading="lazy" onerror="this.remove()"></div>
+    <div class="coach-dialog-body">
+      <div class="coach-role">Grupni treninzi</div>
+      <h2 id="coach-3-name">JELENA VUKOVIĆ</h2>
+      <div class="coach-meta"><span>7 godina iskustva</span><span>grupe do 12 ljudi</span></div>
+      <div class="chips"><span class="chip">Grupni treninzi</span><span class="chip">Izdržljivost</span><span class="chip">Početnici</span></div>
+      <p>Vodim grupne treninge sedam godina. Grupe su do 12 ljudi, pa svakog vidim i ispravim.</p><p>Trening je težak, ali vježbe prilagodim tvom nivou. Niko ne ostaje sam u ćošku.</p>
+      <dl><div><dt>Za koga je</dt><dd>Ako ti treba ekipa da ne odustaneš poslije dvije sedmice.</dd></div><div><dt>Van sale</dt><dd>Joga na plaži i dobra knjiga.</dd></div></dl>
+      <a class="btn btn-primary" href="#kontakt" data-select="Probni trening sa Jelenom">Zakaži probni trening sa Jelenom</a>
+    </div>
+  </div>
+</dialog>
+<dialog class="modal lightbox" id="lightbox" aria-label="Galerija sale">
+  <button class="modal-close" type="button" data-close aria-label="Zatvori"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18"/></svg></button>
+  <figure>
+    <div class="ph"></div>
+    <button class="lb-nav lb-prev" type="button" aria-label="Prethodna slika"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button class="lb-nav lb-next" type="button" aria-label="Sljedeća slika"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg></button>
+    <figcaption><span class="lb-cap"></span><span class="lb-count"></span></figcaption>
+  </figure>
+</dialog>
+
 
 <footer class="site-footer">
   <div class="container footer-inner">
@@ -877,7 +1073,7 @@
     if (!('IntersectionObserver' in window)) return;
     if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     document.documentElement.classList.add('js');
-    var groups = ['.section-head', '.section-title', '.kicker', '.grid-4 > .card', '.problem-card', '.quote-card', '.step', '.coach', '.price-card', '.faq details', '.section-cta', '.contact-copy', '.contact-side'];
+    var groups = ['.section-head', '.section-title', '.kicker', '.grid-4 > .card', '.problem-card', '.quote-card', '.step', '.coach', '.price-card', '.faq details', '.section-cta', '.contact-copy', '.contact-side', '.case-card', '.gallery-item'];
     var els = [];
     groups.forEach(function (sel) {
       document.querySelectorAll(sel).forEach(function (el) {
@@ -932,6 +1128,63 @@
     window.addEventListener('scroll', function () { if (!ticking) { ticking = true; requestAnimationFrame(update); } }, { passive: true });
     window.addEventListener('resize', update);
     update();
+  })();
+</script>
+<script>
+  (function () {
+    var lockY = 0;
+    function openModal(d) { if (typeof d.showModal !== 'function') return false; d.showModal(); document.body.classList.add('modal-open'); return true; }
+    function closeModal(d) { d.close(); }
+    document.querySelectorAll('.modal').forEach(function (d) {
+      d.addEventListener('close', function () { document.body.classList.remove('modal-open'); if (d._opener) d._opener.focus(); });
+      d.addEventListener('click', function (e) { if (e.target === d) closeModal(d); });
+      d.querySelectorAll('[data-close]').forEach(function (b) { b.addEventListener('click', function () { closeModal(d); }); });
+    });
+    // Treneri
+    document.querySelectorAll('[data-coach]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var d = document.getElementById(btn.getAttribute('data-coach'));
+        if (!d) return; d._opener = btn; openModal(d);
+      });
+    });
+    document.querySelectorAll('.coach-dialog [data-select]').forEach(function (a) {
+      a.addEventListener('click', function () { var d = a.closest('dialog'); if (d) d.close(); });
+    });
+    // Galerija
+    var lb = document.getElementById('lightbox');
+    if (!lb) return;
+    var items = Array.prototype.slice.call(document.querySelectorAll('.gallery-item'));
+    var ph = lb.querySelector('.ph'), cap = lb.querySelector('.lb-cap'), count = lb.querySelector('.lb-count');
+    var idx = 0;
+    function show(i) {
+      idx = (i + items.length) % items.length;
+      var it = items[idx];
+      var src = it.getAttribute('data-src'), label = it.getAttribute('data-label'), alt = it.getAttribute('data-alt');
+      ph.textContent = it.getAttribute('data-ph');
+      var img = new Image();
+      img.alt = alt; img.className = 'swap';
+      img.onerror = function () { img.remove(); };
+      img.src = src;
+      ph.appendChild(img);
+      cap.textContent = label;
+      count.textContent = (idx + 1) + ' / ' + items.length;
+    }
+    items.forEach(function (it, i) {
+      it.addEventListener('click', function () { lb._opener = it; show(i); openModal(lb); });
+    });
+    lb.querySelector('.lb-prev').addEventListener('click', function () { show(idx - 1); });
+    lb.querySelector('.lb-next').addEventListener('click', function () { show(idx + 1); });
+    lb.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); show(idx - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); show(idx + 1); }
+    });
+    var sx = null;
+    lb.addEventListener('touchstart', function (e) { sx = e.touches[0].clientX; }, { passive: true });
+    lb.addEventListener('touchend', function (e) {
+      if (sx === null) return;
+      var dx = e.changedTouches[0].clientX - sx; sx = null;
+      if (Math.abs(dx) > 50) show(idx + (dx < 0 ? 1 : -1));
+    });
   })();
 </script>
 </body>
